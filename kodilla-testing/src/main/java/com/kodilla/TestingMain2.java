@@ -1,11 +1,11 @@
-package com.kodilla.testing.user;
+package com.kodilla;
 
-import com.kodilla.testing.user.SimpleUser:
+import com.kodilla.testing.user.SimpleUser;
 
-public class TestingMain {
+public class TestingMain2 {
 
     public static void main (String[] agrs) {
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
+        SimpleUser simpleUser = new SimpleUser("theForumUser", "theForumUser");
 
         String result = simpleUser.getUsername();
 

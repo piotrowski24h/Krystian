@@ -1,4 +1,4 @@
-package com.kodilla.testing.collection;
+package com.kodilla.testing.collectionA;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -6,12 +6,12 @@ import java.util.Random;
 public class NumbersExterminator {
 
     public static void main (String[] args) {
-        ArrayList<Integer> theList = new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<>();
         Random theExterminate = new Random();
         for (int n=0; n<200; n++) {
-            theList.add(theExterminate.nextInt(100));
+            list.add(theExterminate.nextInt(100));
         }
         OddNumbersExterminator exterminator =new OddNumbersExterminator();
-        exterminator.exterminate(theList);
+        exterminator.exterminate(list);
     }
 }

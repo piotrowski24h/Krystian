@@ -1,13 +1,14 @@
-package com.kodilla.testing.collection;
+package com.kodilla.testing.collectionA;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class OddNumbersExterminator {
 
 
 
-    public void exterminate(ArrayList<Integer> numbers) {
+    public List<Integer> exterminate(ArrayList<Integer> numbers) {
 
         ArrayList <Integer> result = new ArrayList<>();
 
@@ -20,7 +21,7 @@ public class OddNumbersExterminator {
             }
 
         }
-
+        return result;
     }
 }
 

@@ -1,0 +1,3 @@
+[0203/182040.503:ERROR:directory_reader_win.cc(43)] FindFirstFile: System nie mo¿e odnaleŸæ okreœlonej œcie¿ki. (0x3)
+[0203/182040.508:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Krystian\AppData\Local\AVAST Software\Browser\User Data\Crashpad\attachments\fd8690cc-394e-448b-bb12-33b90787f786: System nie mo¿e odnaleŸæ okreœlonej œcie¿ki. (0x3)
+[0203/182040.510:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Krystian\AppData\Local\AVAST Software\Browser\User Data\Crashpad\attachments\54276a6b-b4cb-4363-89c8-daf291d5ac6c: System nie mo¿e odnaleŸæ okreœlonej œcie¿ki. (0x3)
