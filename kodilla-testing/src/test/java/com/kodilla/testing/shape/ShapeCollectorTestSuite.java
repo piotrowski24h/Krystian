@@ -14,9 +14,9 @@ public class ShapeCollectorTestSuite {
     }
     @Test
  void testRemoveShape() {
-        ShapeCollector shapeCollector = new ShapeCollector( "Remove circle");
+        ShapeCollector shapeCollector = new ShapeCollector(figure);
         //when
-     boolean result = ShapeCollector.remove("circle");
+     boolean result = ShapeCollector.remove(); //- obiekt circle ma byc / stworzyuc obiekt
 
      //Then
      Assertions.assertFalse(result);

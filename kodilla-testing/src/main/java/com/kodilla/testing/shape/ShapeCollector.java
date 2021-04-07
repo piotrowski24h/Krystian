@@ -1,29 +1,45 @@
 package com.kodilla.testing.shape;
 
-import java.util.ArrayList;
-import java.util.List;
 
-public class ShapeCollector {
-    public ShapeCollector(String removeCircle) {
+public class ShapeCollector implements Shape{
+//
+//    List<Shape> shapes = new ArrayList<>();
+//
+//
+//
+//    String getFigure()      {
+//
+//        return Shape;
+//     }
+//
 
+
+//
+//
+//
+//    public String figure; (Shape shape) {
+//       shapes.add(Shape);
+//
+//    }
+
+//    public Shape Figure;
+//    {
+//      String shapes.remove(shapes);
+//        return shape;
+//
+//    }
+//    public Shape slowFigure;
+
+    @Override
+    public String getShapeName() {
+        return null;
     }
 
-    public static void main(String[] args) {
-        List<String> collector = new ArrayList<>();
-        collector.add("square");
-        collector.add("circle");
-        collector.add("triangle");
-
-        System.out.println("square");
-        for (String mm : collector) {
-            System.out.println("check size" + mm);
-        }
-        System.out.println("add new shape");
-        collector.remove("circle");
-   // punkt usuwającą figurę z kolekcji - jest ok ?
-    }
-
-    public static boolean remove(String circle) {
-        return false;
+    @Override
+    public double getField() {
+        return 0;
     }
 }
+
+
+

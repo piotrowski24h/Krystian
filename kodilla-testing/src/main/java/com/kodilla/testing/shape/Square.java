@@ -1,16 +1,19 @@
 package com.kodilla.testing.shape;
 
-public class Rectangle implements Shape {
+public class Square implements Shape {
 
     @Override
-    public getShapeName(String name){
-
+    public String getShapeName(){
+    return "Square";
     }
 
     @Override
-     public Double getField(double result) {
-            return result;
+     public double getField() {
+        double a= 5.5;
+        double area = a*a;
+        System.out.println("area of square" + area);
 
 
-        }
+        return area;
+     }
 }
