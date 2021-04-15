@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class TemperaturesStub {
 
-    @Override
+    //@Override
     public Map<String,Double> getTemperatures() {
         Map<String, Double> stubResult = new HashMap<>();
 

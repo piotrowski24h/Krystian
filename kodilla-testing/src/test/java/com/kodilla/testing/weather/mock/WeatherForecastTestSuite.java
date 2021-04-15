@@ -1,35 +1,76 @@
 package com.kodilla.testing.weather.mock;
-import com.kodilla.testing.weather.stub.Temperatures;                            // [2]
-import com.kodilla.testing.weather.stub.WeatherForecast;                         // [3]
-import org.junit.jupiter.api.Assertions;                                         // [4]
-import org.junit.jupiter.api.Test;                                               // [5]
 
-import java.util.HashMap;                                                        // [6]
-import java.util.Map;                                                            // [7]
+import com.kodilla.testing.weather.stub.Temperatures;
+import com.kodilla.testing.weather.stub.TemperaturesStub;
+import com.kodilla.testing.weather.stub.WeatherForecast;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.testng.IResultMap;
 
-import static org.mockito.Mockito.mock;                                          // [8]
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
 public class WeatherForecastTestSuite {
 
-    @Test                                                                         // [11]
-    void testCalculateForecastWithMock() {                                        // [12]
+    @Test
+    void testCalculateForecastWithMock() {
         //Given
-        Temperatures temperaturesMock = mock(Temperatures.class);                  // [13]
-        Map<String, Double> temperaturesMap = new HashMap<>();                     // [14]
-        temperaturesMap.put("Rzeszow", 25.5);                                      // [15]
-        temperaturesMap.put("Krakow", 26.2);                                       // [16]
-        temperaturesMap.put("Wroclaw", 24.8);                                      // [17]
-        temperaturesMap.put("Warszawa", 25.2);                                     // [18]
-        temperaturesMap.put("Gdansk", 26.1);                                       // [19]
-        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);      // [20]
-        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);   // [21]
+        Temperatures temperaturesMock = mock(Temperatures.class);
+        Map<String, Double> temperaturesMap = new HashMap<>();
+        temperaturesMap.put("Rzeszow", 25.5);
+        temperaturesMap.put("Krakow", 26.2);
+        temperaturesMap.put("Wroclaw", 24.8);
+        temperaturesMap.put("Warszawa", 25.2);
+        temperaturesMap.put("Gdansk", 26.1);
+        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
         //When
-        int quantityOfSensors = weatherForecast.calculateForecast().size();        // [22]
+        int quantityOfSensors = weatherForecast.calculateForecast().size();
 
         //Then
-        Assertions.assertEquals(5, quantityOfSensors);                             // [23]
+        Assertions.assertEquals(5, quantityOfSensors);
     }
 
 
+    @Test
+    <temperaturesMock>
+    void testCalForecastWithMock() {
+        //Given
+        Temperatures temperaturesMock = mock(Temperatures.class);
+        Map<String, Double> temperaturesMap = new HashMap<>();
+
+
+        double result =0;     // wrocic do mapy entry set
+        temperaturesMap.put("Rzeszow", 25.5);
+        temperaturesMap.put("Krakow", 26.2);
+        temperaturesMap.put("Wroclaw", 24.8);
+        temperaturesMap.put("Warszawa", 25.2);
+        temperaturesMap.put("Gdansk", 26.1);
+        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap));
+        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
+
+        //When
+for (Map.Entry<double> entry:temperaturesMap.entrySet()) {
+   entry.getValue();
 }
+
+      //Then
+        resultMap.put(temperaturesMap.getKey(),temperaturesMap.getValue() /5);
+        // for (Map.Entry<String, Double> temperaturesMap.temperaturesMap.entrySet("Miasto") {
+        //double avarage = weatherForecast.calculateForecast().size();    // calculator srednia
+
+        //Then
+        for (double e=0 ;e< temperaturesMap; e++) {
+          double  result = temperaturesMap[(int) e];
+        }
+        System.out.println("avarage="+ result);
+
+
+    }
+}
+
+

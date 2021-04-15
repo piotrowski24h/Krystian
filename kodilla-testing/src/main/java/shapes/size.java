@@ -1,2 +1,8 @@
-package shapes;public class size {
+package shapes;
+
+public class size {
+    double avarage() {
+
+        return avarage();
+    }
 }

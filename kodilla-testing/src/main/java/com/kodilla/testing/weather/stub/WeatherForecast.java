@@ -10,7 +10,11 @@ public class WeatherForecast {
     public WeatherForecast (Temperatures temperatures) {
 
         this.temperatures =temperatures;
+// dodac 2 metody : srednia i mediana
+    }
 
+    public double avarage( Temperatures temperatures1) {
+        return temperatures1;
     }
     public Map<String, Double> calculateForecast() {
         Map<String, Double> resultMap = new HashMap<>();
@@ -21,6 +25,7 @@ public class WeatherForecast {
             // as a temporary weather forecast
 
             resultMap.put(temperature.getKey(), temperature.getValue() +1.0);
+            resultMap.put(temperature.getKey(),temperature.getValue() /5);
         }
         return resultMap;
     }
