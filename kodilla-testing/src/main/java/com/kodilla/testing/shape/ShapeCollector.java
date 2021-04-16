@@ -1,35 +1,38 @@
 package com.kodilla.testing.shape;
 
-import org.junit.jupiter.api.extension.ExtensionContext;
-import shapes.size;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShapeCollector implements Shape {
+public class ShapeCollector {
 
-    public static ExtensionContext.Store shapes;
+    //   public static ExtensionContext.Store shapes;
     List<Shape> shapes = new ArrayList<>();
-    private Object Shapes;
 
     public void addFigure(Shape shape) {
-        shapes.get(shape);
+        shapes.add(shape);
     }
 
     public boolean removeFigure(Shape shape) {
-        if ((boolean) shapes.remove(Shape shape)) {
-            shapes.remove(Shape shape);
+        boolean result = false;
+        if (shapes.contains(shape)) {
+            shapes.remove(shape);
+            result = true;
         }
-        return true;
+        return result;
     }
 
     public String showFigures() {
+
         StringBuilder result = new StringBuilder();
-        for (double i = 0; i < new size(); i++) {
+        for (int i = 0; i < shapes.size(); i++) {
 
-            new size();
-            result.append(shapes.get(i).toString());
+            if (shapes.size() != 1) {
 
+                result.append(", ").append(shapes.get(i).getShapeName());
+            } else {
+
+                result = new StringBuilder(shapes.get(i).getShapeName());
+            }
         }
         return result.toString();
     }
@@ -44,18 +47,18 @@ public class ShapeCollector implements Shape {
 
 
 
-    public Shape slowFigure;
+    //public Shape slowFigures;
 
-    @Override
-    public String getShapeName() {
-        return null;
-    }
+    //@Override
+   // public String getShapeName() {
+  //      return null;
+ //   }
 
-    @Override
-    public double getField() {
-        return 0;
-    }
-}
+  //  @Override
+  //  public double getField() {
+    //    return 0;
+
+
 
 
 
