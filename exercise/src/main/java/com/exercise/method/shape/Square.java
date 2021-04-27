@@ -1,9 +1,21 @@
 package com.exercise.method.shape;
 
-import java.awt.*;
+public class Square implements Shape {
+    double a;
+    double field;
 
-class Square implements shape {
-    void draw(){
-        System.out.println("draw Square");
+    public Square(double a) {
+        this.a = a;
+
+    }
+
+    @Override
+    public String getShapeName() {
+        return "Square";
+    }
+
+    @Override
+    public double getField() {
+        return field = a * a;
     }
 }

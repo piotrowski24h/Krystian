@@ -8,6 +8,10 @@ public class ShapeCollector {
     //   public static ExtensionContext.Store shapes;
     List<Shape> shapes = new ArrayList<>();
 
+    public  List<Shape> getShapes() {    // tu patrz
+        return shapes;
+    }
+
     public void addFigure(Shape shape) {
         shapes.add(shape);
     }

@@ -6,6 +6,10 @@ public class Circle implements Shape {
 
     public int area;
 
+    public Circle(int i) {
+
+    }
+
     @Override
         public String getShapeName() {
         return "Circle";

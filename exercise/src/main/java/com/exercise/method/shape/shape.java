@@ -1,6 +1,7 @@
 package com.exercise.method.shape;
 
- interface Shape {
+ public interface Shape {
 
-     void draw();
+     String getShapeName();
+     double getField();
 }
