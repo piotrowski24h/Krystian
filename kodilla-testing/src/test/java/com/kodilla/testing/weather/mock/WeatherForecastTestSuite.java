@@ -41,19 +41,19 @@ public class WeatherForecastTestSuite {
         Map<String, Double> temperaturesMap = new HashMap<>();
 //        double
 //        Double
-        temperaturesMap.put("Rzeszow", 0.0);
-        temperaturesMap.put("Krakow", 0.0);
-        temperaturesMap.put("Wroclaw", 0.0);
+        temperaturesMap.put("Rzeszow", 2.0);
+        temperaturesMap.put("Krakow", 2.0);
+        temperaturesMap.put("Wroclaw", 2.0);
         temperaturesMap.put("Warszawa", 0.0);
         temperaturesMap.put("Gdansk", 0.0);
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
         double suma = 0;
         //When
-        for (Map.Entry<String,Double> entry : temperaturesMap.entrySet()) {
-           suma += entry.getValue();
+        for (Map.Entry<String, Double> entry : temperaturesMap.entrySet()) {
+            suma += entry.getValue();
         }
-        double avarage = suma/temperaturesMap.size();
+        double avarage = suma / temperaturesMap.size();
         //Then
 
         System.out.println("avarage=" + avarage);
