@@ -1,11 +1,14 @@
-package com.kodilla.testing.stub;
+package com.kodilla.testing.weather.stub;
 
-import com.kodilla.testing.weather.stub.Temperatures;
-import com.kodilla.testing.weather.stub.WeatherForecast;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class WeatherForecastTestSuite {
+    private Temperatures temperatures;
+
+    public WeatherForecast(Temperatures temperatures);
+    this.temperatures =temperatures;
+}
 
     @Test
     void testCalculateForecastWithMock() {
