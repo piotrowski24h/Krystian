@@ -8,6 +8,8 @@ public interface LibraryDatabase {
 
     List<Book> listBooksInHandsOf(LibraryUser libraryUser);
 
+    //List<Book> listBooksInHandsOf(LibraryDatabaseMock libraryDatabaseMock);
+
     boolean rentABook(LibraryUser libraryUser, Book book);
 
 

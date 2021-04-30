@@ -139,15 +139,20 @@ public class BookDirectoryTestSuite {
     void testListBooksInHandsOf() {
 
         // Given
+        BookLibrary bookLibrary =new BookLibrary(libraryDatabaseMock);
         LibraryUser libraryUser0 =new LibraryUser("Kazimierz ", "Wielki ", "123456789");
         LibraryUser libraryUser1 =new LibraryUser("Iwan","Grożny", "987654321");
         LibraryUser libraryUser3 =new LibraryUser("Tomasz","Kamel","5433216897");
-        BookLibrary bookLibrary =new BookLibrary(libraryDatabaseMock);
+
         List<Book> resultListOfBooks0 = bookLibrary.listBooksInHandsOf(libraryUser0);
         List<Book> resultListOfBooks1 = bookLibrary.listBooksInHandsOf(libraryUser1);
         List<Book>  resultListOfBooks2 = bookLibrary.listBooksInHandsOf(libraryUser3);
 
         //When
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser0)).thenReturn(resultListOfBooks0);    //- chodziło Ci o to ? prawda ?
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser1)).thenReturn(resultListOfBooks1);
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser3)).thenReturn(resultListOfBooks2);
+
         List<Book> theListOfBooks0 =bookLibrary.listBooksInHandsOf(libraryUser0);
         List<Book> theListOfBooks1 =bookLibrary.listBooksInHandsOf(libraryUser1);
         List<Book> theListOfBooks5 =bookLibrary.listBooksInHandsOf(libraryUser3);
