@@ -59,7 +59,7 @@ public class WeatherForecast {
              storedValue = temperature.getValue();
              sortedMedianMap.put(storedValue, storedKey);
          }
-         Collection.registerNatives(sortedValueList);
+       //  Collection.registerNatives(sortedValueList);
 
          for (int i = 0; i < sortedValueList.size(); i++) {
              if (sortedValueList.size() % 2 == 0) {

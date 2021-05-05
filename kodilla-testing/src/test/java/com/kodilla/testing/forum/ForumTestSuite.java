@@ -1,4 +1,4 @@
-package com.kodilla.testing.forum.tdd;
+package com.kodilla.testing.forum;
 
 //@DisplayName( "TDD: Forum Test Suite\ uD83D\uDE31")
 // class ForumTestSuite {

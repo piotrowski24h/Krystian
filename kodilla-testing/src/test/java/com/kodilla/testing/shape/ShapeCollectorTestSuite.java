@@ -33,8 +33,8 @@ public class ShapeCollectorTestSuite {
                 Circle circle1 = new Circle(10);
                 shapeCollector.addFigure(circle1);
 
-                int result1 = shapeCollector.shapes.size();
-                double result2 = shapeCollector.shapes.get(0).getField();
+                int result1 = shapeCollector.getShapes().size();
+                double result2 = shapeCollector.getShape(0).getField();
 
                 Assertions.assertEquals(1, result1);
                 Assertions.assertEquals((10 * 10 * 3.14), result2, 0.01);
@@ -52,8 +52,8 @@ public class ShapeCollectorTestSuite {
                 ShapeCollector shapeCollector = new ShapeCollector();
                 Circle circle1 = new Circle(10);
                 shapeCollector.addFigure(circle1);
-
-                int result = shapeCollector.shapes.size();
+                 shapeCollector.removeFigure(circle1);   // - to chodzilo
+                int result = shapeCollector.getShapes().size();
 
                 Assertions.assertEquals(1, result);
                 System.out.println("Expected size of the list : 1");
@@ -70,8 +70,8 @@ public class ShapeCollectorTestSuite {
                 Circle circle1 = new Circle(10);
                 shapeCollector.addFigure(circle1);
 
-                Shape result1 = shapeCollector.shapes.get(0);
-                double result2 = shapeCollector.shapes.get(0).getField();
+                Shape result1 = shapeCollector.getShape(0);
+                double result2 = shapeCollector.getShape(0).getField();
 
                 Assertions.assertEquals(circle1, result1);
                 Assertions.assertEquals(circle1, result1);

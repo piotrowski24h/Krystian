@@ -144,9 +144,9 @@ public class BookDirectoryTestSuite {
         LibraryUser libraryUser1 =new LibraryUser("Iwan","Grożny", "987654321");
         LibraryUser libraryUser3 =new LibraryUser("Tomasz","Kamel","5433216897");
 
-        List<Book> resultListOfBooks0 = bookLibrary.listBooksInHandsOf(libraryUser0);
-        List<Book> resultListOfBooks1 = bookLibrary.listBooksInHandsOf(libraryUser1);
-        List<Book>  resultListOfBooks2 = bookLibrary.listBooksInHandsOf(libraryUser3);
+        List<Book> resultListOfBooks0 = new ArrayList<>();
+        List<Book> resultListOfBooks1 =  generateListOfNBooks(1);
+        List<Book>  resultListOfBooks2 = generateListOfNBooks(5);
 
         //When
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUser0)).thenReturn(resultListOfBooks0);    //- chodziło Ci o to ? prawda ?

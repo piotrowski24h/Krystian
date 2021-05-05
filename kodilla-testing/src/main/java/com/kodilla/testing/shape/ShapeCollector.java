@@ -6,11 +6,16 @@ import java.util.List;
 public class ShapeCollector {
 
     //   public static ExtensionContext.Store shapes;
-    List<Shape> shapes = new ArrayList<>();
+   private List<Shape> shapes = new ArrayList<>();
 
     public  List<Shape> getShapes() {    // tu patrz
         return shapes;
     }
+    public Shape getShape(int n) {
+        return shapes.get(n);
+
+    }
+
 
     public void addFigure(Shape shape) {
         shapes.add(shape);
