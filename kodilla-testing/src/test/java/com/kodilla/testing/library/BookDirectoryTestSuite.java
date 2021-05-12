@@ -38,9 +38,6 @@ public class BookDirectoryTestSuite {
 
     @Test
     void testListBooksWithConditionsReturnList() {
-
-
-
         // Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> resultListOfBooks = new ArrayList<>();
