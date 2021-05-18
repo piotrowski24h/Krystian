@@ -1,15 +1,29 @@
 package com.kodilla.stream.lambda;
 
-import com.kodilla.stream.beautfier.PoemBeautifier;
+import com.kodilla.stream.book.Book;
+import com.kodilla.stream.book.BookDirectory;
+import java.util.Map;
+import java.util.stream.Collectors;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import java.awt.*;
+import java.util.stream.Collectors;
 
  public class StreamMain {
      // private static Object Filter;
 
      public static void main(String[] args) {
+         BookDirectory theBookDirectory = new BookDirectory();
+
+         Map<String, Book> theResultMapOfBooks = theBookDirectory.getList().stream()
+                 .filter(book -> book.getYearOfPublication() > 2005)
+                 .collect(Collectors.toMap(Book::getSignature, book -> book));             // [1]
+
+         System.out.println("# elements: " + theResultMapOfBooks.size());             // [2]
+         theResultMapOfBooks.entrySet().stream()
+                 .map(entry -> entry.getKey() + ": " + entry.getValue())                   // [3]
+                 .collect(Collectors.joining(",\n","<<",">>"));
+     }
+ }
      //public static List<String> main(String[] args) {
          //StreamMain streamMain = new StreamMain();
 // ctrl+/ - komentarz
@@ -29,24 +43,24 @@ import java.util.List;
 //         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::divideAByB);
 //
 
-         PoemBeautifier poemBeautifier = new PoemBeautifier();                                       // - czy to wygląda ok?
-         poemBeautifier.beautify("It is nice Spring", text -> text.toUpperCase());
-         poemBeautifier.beautify("Today is \"ABC\" lesson", text -> "ABC" + text);
-
-         List<String> beautify = new ArrayList<>();
-         beautify.add("Spring");
-         beautify.add("flower");
-         beautify.add("day");
-
-
-         for (int i = 0; i < beautify.size()-1; i++) {
-            String s = poemBeautifier.beautify(beautify.get(i), text -> text.concat("ABC"));
-
-         }
-
-         for (String s : beautify) {
-             System.out.println(s);
-         }
+//         PoemBeautifier poemBeautifier = new PoemBeautifier();                                       // - czy to wygląda ok?
+//         poemBeautifier.beautify("It is nice Spring", text -> text.toUpperCase());
+//         poemBeautifier.beautify("Today is \"ABC\" lesson", text -> "ABC" + text);
+//
+//         List<String> beautify = new ArrayList<>();
+//         beautify.add("Spring");
+//         beautify.add("flower");
+//         beautify.add("day");
+//
+//
+//         for (int i = 0; i < beautify.size()-1; i++) {
+//            String s = poemBeautifier.beautify(beautify.get(i), text -> text.concat("ABC"));
+//
+//         }
+//
+//         for (String s : beautify) {
+//             System.out.println(s);
+//         }
 
 
       //   private List<String> filter (List < String > input, Filter filter){
@@ -54,8 +68,8 @@ import java.util.List;
       //       for (String beauti : input) {
       //           if (filter.filter(beauti)) {
       //               resultList.add(beauti);
-                 }
-             }
+//                 }
+//             }
       //       return resultList;
       //   }
          // list<String> filter beautify = filter(beautify, beauti -> beauti.endsWith("!"));
