@@ -1,7 +1,6 @@
 package com.kodilla.stream.forumUser;
 
 import java.time.LocalDate;
-import java.util.Queue;
 
 public class ForumUser {
     private final int userFB;
@@ -14,10 +13,8 @@ public class ForumUser {
        this.userFB = userFB;
        this.userName = userName;
        this.sex = sex;
-        int month;
-        int year;
-        int day;
-        this.brirthday = LocalDate.of(year, month, day);
+
+        this.brirthday = brirthday;
        this.posts = posts;
     }
 
@@ -41,7 +38,7 @@ public class ForumUser {
         return posts;
     }
 
-    Override
+    @Override
     public String toString() {
         return "ForumUser{" +
                 ", userFB="+ userFB+
