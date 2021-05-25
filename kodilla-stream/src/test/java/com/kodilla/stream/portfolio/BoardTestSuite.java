@@ -1,13 +1,13 @@
 package com.kodilla.stream.portfolio;
 
 import org.junit.jupiter.api.Test;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BoardTestSuite {
     @Test
@@ -141,16 +141,16 @@ private Board prepareTestData() {
     @Test
     void testAddTaskListAverageWorkingOnTask(){
         //give
-        Board project = prepareTestData();
+        Board project = prepareTestData();                      //sprawdzic sobie test
 
         //when
         List<TaskList> inProgressTasks =new ArrayList<>();
         inProgressTasks.add(new TaskList("in progress"));
-        Stream<LocalDate> allDaysPass = project.getTaskLists().stream()
+        long allDaysPass = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .map(t -> t.getCreated().until(LocalDate.now()))
-                .filter(d -> d.compareTo(LocalDate.now().minusDays(10)))
+                .map(t -> t.getDeadline())
+                .filter(d -> d.isBefore(LocalDate.now().minusDays(10)))
                 .count();
         long taskCount = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
