@@ -16,7 +16,7 @@ public class FileReaderTestSuite {
         String fileName = "nie_ma_takiego_pliku.txt";
         // when & then
         assertThrows(FileReaderException.class, () -> fileReader.readFile(fileName));
-        () -> assertThrows(FileReaderException.class, () -> fileReader.readFile(null)),
-                () -> assertDoesNotThrow(() -> fileReader.readFile("names.txt"))
+        assertThrows(FileReaderException.class, () -> fileReader.readFile(null));
+        assertDoesNotThrow(() -> fileReader.readFile("names.txt"));
     }
 }
