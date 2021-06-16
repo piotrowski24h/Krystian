@@ -10,7 +10,7 @@ public class ForumUser {
     private List<Post> posts = new ArrayList<>();
     private List<Comment> comments = new ArrayList<>();
 
-    //ctrl + y - usuwanie liniki kodu
+
     public ForumUser(String user, String realData) {
         this.user = user;
         this.realData = realData;

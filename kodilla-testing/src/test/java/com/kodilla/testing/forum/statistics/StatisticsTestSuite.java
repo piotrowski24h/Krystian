@@ -1,4 +1,4 @@
-//package com.kodilla.testing.forum.statistics;
+package com.kodilla.testing.forum.statistics;
 ////
 ////import org.junit.jupiter.api.*;
 ////import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,7 +13,7 @@
 //
 //@DisplayName("TDD: Forum Statistic Test Suite.")
 //@ExtendWith(MockitoExtension.class)
-//public class StatisticsTestSuite<Calculate> {
+public class StatisticsTestSuite<Calculate> {
 //
 //    private static int testCounter = 0;
 //
@@ -92,4 +92,4 @@
 //        Assertions.assertEquals(0, PCsrednia);
 //        Assertions.assertEquals(0, CUsrednia);
 //    }
-//}
+}

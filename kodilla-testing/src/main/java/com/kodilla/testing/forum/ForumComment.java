@@ -1,6 +1,6 @@
 package com.kodilla.testing.forum;
 
-//public class ForumComment {
+public class ForumComment {
 //
 //    private ForumPost forumPost;
 //    private String commentBody;
@@ -44,5 +44,6 @@ package com.kodilla.testing.forum;
 //        result = 31 * result + commentBody.hashCode();
 //        result = 31 * result + author.hashCode();
 //        return result;
-//    }
+
 //}
+}

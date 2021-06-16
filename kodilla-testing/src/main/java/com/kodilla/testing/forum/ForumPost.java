@@ -1,6 +1,6 @@
 package com.kodilla.testing.forum;
 
-//public class ForumPost {
+public class ForumPost {
 
 
 
@@ -33,4 +33,4 @@ package com.kodilla.testing.forum;
   //  public String getPostBody() {
 
  //  }
-//}
+}
