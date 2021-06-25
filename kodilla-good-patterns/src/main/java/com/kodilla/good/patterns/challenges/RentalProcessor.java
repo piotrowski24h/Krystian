@@ -1,9 +1,9 @@
 package com.kodilla.good.patterns.challenges;
 
 public class RentalProcessor {
-    private InformationService informationService;
-    private RentalService rentalService;
-    private RentalRepository rentalRepository;
+    private final InformationService informationService;
+    private final RentalService rentalService;
+    private final RentalRepository rentalRepository;
 
     public RentalProcessor(final InformationService informationService,
                            final RentalService rentalService,
