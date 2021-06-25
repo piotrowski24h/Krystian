@@ -4,17 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FlightSearch {
-    public void findFilght (Flight flight) throws RuntimeException {
+    public void findFilght (Flight flight) throws RouteNotFoundException{
 
-        Map<String, Boolean> runToFilght =new HashMap<>();
-        runToFilght.put("Balice", true);
-        runToFilght.put("Pruszcz", false);
+        Map<String, Boolean> runToFight=new HashMap<>();
+        runToFight.put("Balice", true);
+        runToFight.put("Pruszcz", false);
 
-        if(runToFilght.get(flight.arrivalAirport) !=null) {
-            if (runToFilght.get(flight.arrivalAirport) == true) {
-                System.out.println("Flight run to" + flight.arrivalAirport + "is not good");
+        if(runToFight.get(flight.getArrivalAirport()) != null) {
+            if (runToFight.get(flight.getArrivalAirport())) {
+                System.out.println("Flight run to" + flight.getArrivalAirport() + "is not good");
             } else {
-                System.out.println("Sorry,flight is not good idea" + flight.arrivalAirport + "is not now");
+                System.out.println("Sorry,flight is not good idea" + flight.getArrivalAirport() + "is not now");
 
             }
         } else {

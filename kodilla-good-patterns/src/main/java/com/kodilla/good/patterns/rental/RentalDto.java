@@ -1,18 +1,18 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.rental;
 
 public class RentalDto {
     public User user;
-    public boolean RentalDto;
+    public boolean processed;
 
-    public RentalDto(final User user, final boolean isAllegro ) {
+    public RentalDto(final User user, final boolean processed ) {
         this.user = user;
-        this.RentalDto= isAllegro;
+        this.processed = processed;
     }
     public User getUser() {
         return user;
     }
 
-    public boolean isAllegro() {
-        return RentalDto;
+    public boolean isProcessed() {
+        return processed;
     }
 }

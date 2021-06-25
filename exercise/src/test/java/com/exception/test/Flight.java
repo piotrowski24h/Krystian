@@ -1,13 +1,15 @@
 package com.exception.test;
 
 public class Flight {
-    String departureAirport;
-    String arrivalAirport;
+    private String departureAirport;
+    private String arrivalAirport;
 
-    public (String departureAirport, String arrivalAirport) {
-        this.departureAirport=departureAirport;
-        this.arrivalAirport=arrivalAirport;
+    public Flight(String departureAirport, String arrivalAirport) {
+        this.departureAirport = departureAirport;
+        this.arrivalAirport = arrivalAirport;
     }
+
+    public Flight() {    }
 
     public String getDepartureAirport() {
         return departureAirport;

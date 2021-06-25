@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.rental;
 
 public class RentalProcessor {
     private final InformationService informationService;  // interfejsy
@@ -17,7 +17,7 @@ public class RentalProcessor {
         boolean isRented = rentalService.rent(rentRequest.getUser(), rentRequest.getFrom(),
                 rentRequest.getTo());
 
-        if (isRented) {
+        if (isRented && rentRequest.getUser().getAge() > 18) {
             informationService.inform(rentRequest.getUser());
             rentalRepository.createRental(rentRequest.getUser(), rentRequest.getFrom(), rentRequest.getTo());
             return new RentalDto(rentRequest.getUser(), true);

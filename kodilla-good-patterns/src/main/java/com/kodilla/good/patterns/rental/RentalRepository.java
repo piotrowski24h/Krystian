@@ -1,9 +1,7 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.rental;
 
 import java.time.LocalDateTime;
 
-public class RentalRepository {
-    boolean createRental(User user, LocalDateTime from, LocalDateTime to) {
-        return false;
-    }
+public interface RentalRepository {
+    boolean createRental(User user, LocalDateTime from, LocalDateTime to);
 }
