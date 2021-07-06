@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.Food2Door;
 
 public class Product {
     private final String name;
-    private int age;
+    private int age;  //localdate
     private double price;
 
 
