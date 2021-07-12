@@ -1,23 +1,37 @@
 package com.kodilla.good.patterns.Food2Door;
 
+import java.util.Objects;
+
 public class BuyFood {
-    public Product product;
-    public boolean processed;
+    public OldProduct product;
+    public boolean process;
 
 
-public BuyFood(final Product product, final boolean processed){
+public BuyFood(final OldProduct product, final boolean process){
     this.product = product;
-    this.processed = processed;
+    this.process = process;
 }
 
-    public Product getProduct() {
+    public OldProduct getProduct() {
         return product;
     }
-    public boolean isProcessed() {
-        return processed;
+    public boolean isProcess() {
+        return process;
     }
 
-    public void processed() {
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BuyFood)) return false;
+        BuyFood buyFood = (BuyFood) o;
+        return process == buyFood.process && product.equals(buyFood.product);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(product, process);
     }
 }
 

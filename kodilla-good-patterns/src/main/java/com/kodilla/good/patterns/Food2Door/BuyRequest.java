@@ -4,26 +4,33 @@ import java.time.LocalDateTime;
 
 public class BuyRequest {
 
-        private  Product product;
-        private  double price;
-        private  LocalDateTime to;
+    private OldProduct product;
+    private  double price;
+//    private final LocalDateTime to;
 
-        public BuyRequest (Product product,double price, LocalDateTime to) {
+
+    public BuyRequest(OldProduct product, double price, LocalDateTime to) {
             this.product = product;
             this.price = price;
-            this.to = to;
+//            this.to = to;
 
-        }
-        public Product getProduct() {
+    }
+
+    public BuyRequest(Object o) {
+
+    }
+
+    public OldProduct getProduct() {
             return product;
-        }
-
-        public LocalDateTime getTo() {
-            return to;
         }
 
     public double getPrice() {
         return price;
     }
+
+//    public LocalDateTime getTo() {
+//        return to;
+//    }
+
 }
 

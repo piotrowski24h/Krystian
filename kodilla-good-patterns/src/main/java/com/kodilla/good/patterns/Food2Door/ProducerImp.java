@@ -4,7 +4,7 @@ public class ProducerImp implements ProducerType {
 
 
     @Override
-    public void inform(Product product) {
+    public void inform(OldProduct product) {
 
     }
 }

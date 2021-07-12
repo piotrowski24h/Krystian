@@ -11,7 +11,7 @@ public class ProducerProcess {
         boolean isBuy = producer.process(buyRequest.getProduct(), buyRequest.getPrice());
 
 
-        if (isBuy && buyRequest.getProduct().getPrice() > 3.50) {
+        if (isBuy && buyRequest.getProduct().getPrice() > 5) {
             producer.process(buyRequest.getProduct(), buyRequest.getPrice());
             return new BuyFood(buyRequest.getProduct(), true);
         } else {

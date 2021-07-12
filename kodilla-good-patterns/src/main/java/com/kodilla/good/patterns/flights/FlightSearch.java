@@ -26,6 +26,8 @@ public class FlightSearch {
     public List<String> findAllFlightsWithTransferToLocation(String endLocation) {
 
 
+
         return new ArrayList<>();
+
     }
 }
