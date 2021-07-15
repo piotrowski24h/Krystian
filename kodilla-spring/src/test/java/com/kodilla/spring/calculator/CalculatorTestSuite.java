@@ -1,11 +1,13 @@
 package com.kodilla.spring.calculator;
 
-
+// modul po module sprzatam w idea a potem github sprawdzanie grandel.blud
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@SpringBootTest
 public class CalculatorTestSuite {
 
     @Autowired
