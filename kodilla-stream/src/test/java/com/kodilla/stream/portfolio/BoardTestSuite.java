@@ -3,6 +3,7 @@ package com.kodilla.stream.portfolio;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -138,38 +139,122 @@ private Board prepareTestData() {
         assertEquals(2, longTasks);                                       // [9]
     }
 
-    @Test
+//    @Test
+//   void testAddTaskListAverageWorkingOnTask(){
+//        //give
+//        Board project = prepareTestData();                      //sprawdzic sobie test
+//
+//        //when
+//        List<TaskList> inProgressTasks =new ArrayList<>();
+//        inProgressTasks.add(new TaskList("in progress"));
+//        long allDaysPass = project.getTaskLists().stream()
+//                .filter(inProgressTasks::contains)
+//                .flatMap(tl -> tl.getTasks().stream())
+//                .map(t -> t.getDeadline())
+//                .filter(d -> d.isBefore(LocalDate.now().minusDays(10)))
+//                .count();
+//        long taskCount = project.getTaskLists().stream()
+//                .filter(inProgressTasks::contains)
+//                .flatMap(tl->tl.getTasks().stream())
+//                .map(t->t.getCreated())
+//                .count();
+//
+//        double averageAllDaysPass = (double)(allDaysPass/ taskCount);
+//
+//        //then
+//        assertEquals(10.0,averageAllDaysPass);
+//
+//
+//        }
+   @Test
     void testAddTaskListAverageWorkingOnTask(){
-        //give
-        Board project = prepareTestData();                      //sprawdzic sobie test
+    // Given
 
-        //when
-        List<TaskList> inProgressTasks =new ArrayList<>();
-        inProgressTasks.add(new TaskList("in progress"));
-        long allDaysPass = project.getTaskLists().stream()
-                .filter(inProgressTasks::contains)
-                .flatMap(tl -> tl.getTasks().stream())
-                .map(t -> t.getDeadline())
-                .filter(d -> d.isBefore(LocalDate.now().minusDays(10)))
-                .count();
-        long taskCount = project.getTaskLists().stream()
-                .filter(inProgressTasks::contains)
-                .flatMap(tl->tl.getTasks().stream())
-                .map(t->t.getCreated())
-                .count();
+    Board project = prepareTestData();
 
-        double averageAllDaysPass = (double)(allDaysPass/ taskCount);
+    //When
+    List<TaskList> inProgessTasks = new ArrayList<>();
+        inProgessTasks.add(new TaskList("In progress"));
+    long totalDaysPass = project.getTaskLists().stream()
+            .filter(inProgessTasks::contains)
+            .flatMap(tl -> tl.getTasks().stream())
+            .map(t -> t.getCreated().until(LocalDate.now()))
+            .reduce((sum, current) -> sum = sum.plus(current)).get().getDays();
+    long tasksCount = project.getTaskLists().stream()
+            .filter(inProgessTasks::contains)
+            .flatMap(tl -> tl.getTasks().stream())
+            .map(t -> t.getCreated())
+            .count();
 
-        //then
-        assertEquals(10.0,averageAllDaysPass);
+       double averageAllDaysPass = (double)(totalDaysPass/tasksCount);
 
+       //Then
+       assertEquals(10.0, averageAllDaysPass);
+   }
 
-        }
-
-
-
-
-
-
+    private long betweenDays(LocalDate start) {
+        return ChronoUnit.DAYS.between(start, LocalDate.now());
     }
+
+    private  Board prepareTestDate() {
+        //users
+        User user1 = new User("uczen1", "J.Born");
+        User user2 = new User("uczen2", "Adam Kowalski");
+        User user3 = new User("uczen3", "Jan Kowalski");
+        User user4 = new User("uczen4", "Anna Nowak");
+
+        //task
+        Task task1 = new Task("Microservice for taking temperature",
+                "Wrte and test the microservice taking\n" +
+                        "the temperature form external servie",
+                user1,
+                user2,
+                LocalDate.now().minusDays(20),
+                LocalDate.now().plusDays(30));
+
+        //task2
+        Task task2 = new Task("HQLs for analysis",
+                "Prepare some HQL queries for analysis",
+                user1,
+                user2,
+                LocalDate.now().minusDays(20),
+                LocalDate.now().minusDays(5));
+         //task3
+        Task task3 = new Task("Temperatures entity",
+                "Preapre entity for temperatures",
+                user3,
+                user4,
+        LocalDate.now().minusDays(20),
+                LocalDate.now().plusDays(10));
+
+         //task4
+        Task task4 = new Task("Own logger",
+                "Refactor company logger to meet our needs",
+                user2,
+                user3,
+                LocalDate.now().minusDays(15),
+                LocalDate.now().plusDays(25));
+
+
+         //taskLists
+    TaskList taskListToFinish = new TaskList("To finish");
+    taskListToFinish.addTask(task1);
+    taskListToFinish.addTask(task2);
+    TaskList taskLisLProgressFinish = new TaskList("Progress Finish");
+    taskLisLProgressFinish.addTask(task3);
+    TaskList taskListFinishFinish =new TaskList("Finish Finish");
+
+
+    //board
+
+    Board project = new Board(("Project 1"));
+    project.addTaskList(taskListToFinish);
+    project.addTaskList(taskLisLProgressFinish);
+    project.addTaskList(taskListFinishFinish);
+    return project;
+    }
+
+
+
+}
 
