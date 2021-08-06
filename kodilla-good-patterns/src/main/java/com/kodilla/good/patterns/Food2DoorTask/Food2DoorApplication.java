@@ -3,11 +3,7 @@ package com.kodilla.good.patterns.Food2DoorTask;
 
 import java.util.ArrayList;
 import java.util.List;//Producer
-//1, 2, 3 kazdy z producerow implementuje process na swoj sposob: np. znizka itd.
-//Skladanie zamowien: co chcemy wybierac:
-// produkt, od ktorego producenta, ilosc
-//request
-//
+
 
 
 public class Food2DoorApplication {
